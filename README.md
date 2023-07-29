@@ -13,19 +13,22 @@ This is the first of a two-part lab that builds a menu bar with a slide-down sub
 ---------------
 1.  Update the `<body>` element in the **index.html** to this:
     
+```html
   <body>
     <header>
       <nav id="top-menu"></nav>
     </header>
     <main></main>
-  
+
     <script src="script.js"></script>
   </body>
-  
+  ```
+
   > Note: The markup is complete - **DO NOT** modify it in any way - do not add any classes or ids.
     
 2.  Add the following CSS within **style.css**:
     
+```css
   * {
     box-sizing: border-box;
   }
@@ -69,6 +72,7 @@ This is the first of a two-part lab that builds a menu bar with a slide-down sub
   #top-menu a:hover {
     background-color: var(--sub-menu-bg);
   }
+  ```
   
   > Note: The CSS is complete - **DO NOT** modify it in any way.
   
@@ -114,6 +118,7 @@ Add a class of `flex-around` to `topMenuEl`.
 #### [](#task-30)Task 3.0
 Copy the following data structure to the top of **script.js**:
 
+```js
     // Menu data structure
     var menuLinks = [
       {text: 'about', href: '/about'},
@@ -121,6 +126,7 @@ Copy the following data structure to the top of **script.js**:
       {text: 'orders', href: '/orders'},
       {text: 'account', href: '/account'},
     ];
+```
 
 #### [](#task-31)Task 3.1
 Iterate over the entire `menuLinks` array and for each "link" object:
