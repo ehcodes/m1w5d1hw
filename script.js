@@ -95,18 +95,39 @@ topMenuEl.addEventListener("click", function (e){
         // 5.5
         e.target.classList.add(`active`)
         // 5.6
-        e.target.innerHTML !==`about` ? showingSubMenu = true : showingSubMenu = false
+        e.target.innerHTML ===`about` ? showingSubMenu = false : showingSubMenu = true
         // 5.7
         if(showingSubMenu == true){
             // 5.8
-            let cuurentSubMenu = menuLinks.filter(object=>{
+            menuLinks.filter(object=>{
                 object.text == e.target.innerHTML ? buildSubMenu(object.subLinks,subMenuEl) : null
             })
             subMenuEl.style.top = `100%`
         }
     } 
 });
+// 6.0
+subMenuEl.addEventListener('click',(e)=>{
+    // 6.0.1
+    e.preventDefault()
+    // 6.0.2
+    if(e.target.localName!==`a`){
+        return
+    }else{
+        // 6.0.3
+        console.log(`${e.target.innerHTML}`)
+        // 6.1.1
+        showingSubMenu = false
+        // 6.1.2
+        subMenuEl.style.top = `0`
+        // 6.2
+        e.target.classList.remove(`active`)
+        // 6.3
+        mainEl.innerHTML = `<h1>${e.target.innerHTML}</h1>`
+    }
+})
 
+// function created to be called for 5.8 
 const buildSubMenu = (arr,menu)=>{
         // 5.8.1
         menu.innerHTML=''
